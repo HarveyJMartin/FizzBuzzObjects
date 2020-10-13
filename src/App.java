@@ -35,7 +35,12 @@ public class App {
             for (Rule rule : rulesToUse) {
                 rule.applyRule(output, i);
             }
-            System.out.println(output.length() == 0 ? Integer.toString(i) : output.toString());
+            if (output.length() == 0) {
+                System.out.println(Integer.toString(i));
+            } else {
+                System.out.println(output.toString());
+            }
+            // System.out.println(output.length() == 0 ? Integer.toString(i) : output.toString());
         }
     }
 }
