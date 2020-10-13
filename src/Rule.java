@@ -1,6 +1,5 @@
 public abstract class Rule {
     private String userMessage;
-    private boolean isEnabled;
 
     public Rule(String userMessage) {
         this.userMessage = userMessage;
@@ -8,9 +7,12 @@ public abstract class Rule {
 
     /**
      * Apply this object's rule to the existing string.  Should return blank if the number is unchanged.
-     * @param existingString The string which is being built up.
+     * @param builder The string builder to append to.
      * @param number The number to compare.
-     * @return The existing string, plus any words to be appended
      */
-    public abstract String applyRule(String existingString, int number);
+    public abstract void applyRule(StringBuilder builder, int number);
+
+    public String getUserMessage() {
+        return userMessage;
+    }
 }

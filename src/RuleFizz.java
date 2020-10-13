@@ -1,14 +1,12 @@
 public class RuleFizz extends Rule {
 
     public RuleFizz() {
-        super("Fizz every third number?");
+        super("Fizz every third number");
     }
 
     @Override
-    public String applyRule(String existingString, int number) {
+    public void applyRule(StringBuilder builder, int number) {
         if (number % 3 == 0)
-            return existingString + "Fizz";
-        return "";
+            builder.append("Fizz");
     }
-    
 }
